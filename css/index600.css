@@ -27,33 +27,10 @@ html, body {
 }
    
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-80%);
-    -webkit-transform: translateX(-50%) translateY(-80%);
-    transform: translateX(-50%) translateY(-80%);
-    width: 75%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-}
-
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 60%;
 }
 
 .head-container{
@@ -64,6 +41,16 @@ html, body {
 .head-col {
     flex: 50%;
 }
+.container h1 {
+    font-size: 36px;
+}
+
+.link {
+    text-decoration: None;
+    font-weight: bold;
+    color: black;
+}
+
 .pfp {
     width: 25%;
     border-radius: 50%;
