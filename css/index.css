@@ -30,24 +30,46 @@ html, body {
     position: absolute;
     top: 50%;
     left: 50%;
-    -moz-transform: translateX(-50%) translateY(-800%);
+    -moz-transform: translateX(-50%) translateY(-80%);
     -webkit-transform: translateX(-50%) translateY(-80%);
     transform: translateX(-50%) translateY(-80%);
     width: 75%;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Create two equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
 }
 
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        padding: 20%;
+        margin: auto;
+    }
+    .container {
+        width: 100%;
+    }
+
+    .column2 { 
+        padding-top: 15%;
+    }
+    
+    .social {
+        display: none;
+    }
+    .social-img {
+        display: none;
+    }
+
+}
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -64,7 +86,7 @@ html, body {
     flex: 50%;
 }
 .pfp {
-    width: auto;
+    width: 25%;
     border-radius: 50%;
 }
 
