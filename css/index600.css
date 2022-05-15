@@ -70,8 +70,8 @@ html, body {
 }
 
 .social-img {
-    width: 72px;
-    height: 72px;
+    width: 48px;
+    height: 48px;
     clip-path: url(#squircle);
     transition: transform .25s
 }
