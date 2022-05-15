@@ -1,0 +1,23 @@
+:root {
+  --accent: #b995ed;
+  --bg: #d9fbff;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(../font/raleway/Raleway-VariableFont_wght.ttf);
+}
+
+.highlight {
+    background: linear-gradient(180deg,rgba(255,255,255,0) 
+            55%, 
+            var(--accent) 50%);
+}
+
+.highlightable:hover {
+    background: linear-gradient(180deg,rgba(255,255,255,0) 
+    65%, 
+    var(--accent) 50%);
+}
+
+

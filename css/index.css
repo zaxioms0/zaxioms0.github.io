@@ -1,0 +1,73 @@
+html, body {
+    padding:0;
+    margin:0;
+    font-family: Raleway;
+    background-color: var(--bg);
+}
+
+.nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav span{
+    display:inline-block;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+    text-decoration: none;
+    color: black;
+}
+.nav a{
+    text-decoration: none;
+}
+   
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-800%);
+    -webkit-transform: translateX(-50%) translateY(-80%);
+    transform: translateX(-50%) translateY(-80%);
+    width: 75%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.head-container{
+    display: flex;
+    align-items: center;
+}
+
+.head-col {
+    flex: 50%;
+}
+.pfp {
+    width: auto;
+    border-radius: 50%;
+}
+
+.width-limit{
+    max-width:100%;
+}
