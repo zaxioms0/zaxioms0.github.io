@@ -1,0 +1,70 @@
+html, body {
+    padding:0;
+    margin:0;
+    font-family: Raleway;
+    background-color: var(--bg);
+}
+
+.nav {
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav span{
+    display:inline-block;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 16px;
+    text-decoration: none;
+    color: black;
+}
+.nav a{
+    text-decoration: none;
+}
+   
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 60%;
+}
+
+.container h1 {
+    font-size: 36px;
+}
+
+.link {
+    text-decoration: None;
+    font-weight: bold;
+    color: black;
+}
+.bottom {
+    margin-bottom: 30%;
+}
+
+.rips {
+    margin-left: 5%;
+}
+.rips-list {
+    list-style:none;
+    margin:0;
+    padding:0;
+    margin-left: 5%;
+}
+
+.guitar {
+    margin-left: 5%;
+}
+
+.description {
+    color: black;
+    background-color: black;
+}
+
+.description:hover{
+    background-color: var(--bg);
+}
