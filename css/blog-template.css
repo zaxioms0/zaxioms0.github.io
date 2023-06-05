@@ -15,7 +15,7 @@ body {
     background-color: #d9fbff;
 }
 
-/* .nav{
+.nav{
         font-family: Raleway;
         font-size: 12pt;
         list-style:none;
@@ -36,7 +36,7 @@ body {
     }
     .nav a{
         text-decoration: none;
-    } */
+    }
 
 .nav{
         font-size: 12pt;

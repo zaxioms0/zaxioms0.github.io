@@ -18,10 +18,12 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="./test.css" />
-  <link rel="stylesheet" href="../../css/about.css" />
   <link rel="stylesheet" href="../../css/helpers.css" />
   <link rel="stylesheet" href="../../css/blog-template.css" />
+  <link rel="stylesheet" media="screen and (max-width: 850px) " href="../../css/blog-template600.css">
+  <!-- <link rel="stylesheet" media="screen and (max-width: 600px) , (max-height: 500px)" href="../../css/index600.css"> -->
+
+
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -129,9 +131,8 @@ connected components of which there are <span
 class="math inline">21</span>. Besides the “main” one, they all have
 size less than <span class="math inline">7</span> and arise from a word
 having a defintion which has no defined words. For example, the set
-<span class="math inline">\{\text{anxious}, \text{remorseful},
-\text{afraid}, \text{intimidated}, \text{alarmed}, \text{dazed},
-\text{frightful}\}</span> is its own connected component where “afraid”
+ {anxiousis, remorseful, afraid, intimidated,
+  alarmed, dazed, frightful} is its own connected component where “afraid”
 stands for “anxious frightful remorseful alarmed intimidated dazed” and
 none of those words are defined (at the time of writing).</p>
 <h2 id="generalized-recursive-arcronyms"> <span class="highlight"> Recursive
