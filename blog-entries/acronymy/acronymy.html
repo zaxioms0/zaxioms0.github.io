@@ -104,7 +104,7 @@ Concretely, in the previous example, the graph would have arrows
 starting at the word “acronym” and ending at all the words in the
 definition. This graph is enormous - culling all the vertices with
 degree <span class="math inline">0</span> it still has about <span
-class="math inline">10,000</span> vertices. Here is a visualization of
+class="math inline">10000</span> vertices. Here is a visualization of
 the graph: <img src="./img/compressed_graph.png"
 alt="A visualization of the Acronymy graph" /></p>
 <p>Super illuminating, I know. The size of the vertices corresponds to
@@ -140,8 +140,8 @@ Arcronyms</span></h2>
 a kid (or pet or something) I will name them a recursive acronym because
 I love them so much. If you’ve had the misfortune of going your entire
 life without encountering recursive acronyms, it’s a fairly simple
-premise - it’s just an acronym in which one of the letter stands for
-itself. The most famous example is GNU which stands for “GNU’s not
+premise - it’s just an acronym in which at least one of the letters stands for
+the acronym itself. The most famous example is GNU which stands for “GNU’s not
 Unix”. I have much more to say on regular recursive acronyms, but that’s
 for another day.</p>
 <p>While working on this project, I realized Acronymy let’s you
@@ -155,8 +155,8 @@ class="math inline">w\, s\, v</span> by replacing <span
 class="math inline">u</span> with its definition. In fact, these
 generalized recursive acronyms are exactly the cycles in the graph! With
 this information in hand, we can find a bunch of them! My personal
-favorite is “yas” stands for “yet another slay” and “slay” stands for
-“stylish, lavish, and yas”. So really, “slay”, stands for “stylish,
+favorite is “yas” stands for “<b>y</b>et <b>a</b>nother <b>s</b>lay” and “slay” stands for
+“<b>s</b>tylish, <b>l</b>avish, <b>a</b>nd <b>y</b>as”. So really, “slay”, stands for “stylish,
 lavish, and stylish, lavish, and …” which I think is incredibly fitting.
 This list of all “essentially unique” generalized recursive acronyms of
 length less than 10 can be found <a
@@ -189,7 +189,7 @@ on how to do that would be greatly appreciated!</p>
 code I used to do all of this analysis <a
 href="https://github.com/zaxioms/acronomy-visualizer">on my github</a> (but it’s in no way
 cleaned up for use). And of course, thank you so much to David Renshaw
-for helping me along in this project, and of course, making
+for helping me along in this project and making
 Acronymy.</p>
 </body>
 </html>
