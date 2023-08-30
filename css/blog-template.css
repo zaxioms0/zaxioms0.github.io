@@ -1,64 +1,79 @@
 body {
-    /* margin: auto; */
-    margin-right: 10em;
-    margin-left: 10em;
-    /* padding: 10em; */
+        /* margin: auto; */
+        margin-right: 10em;
+        margin-left: 10em;
+        padding-top: 0;
+        margin-top: 0;
+        /* padding: 10em; */
 
-    /* max-width: 44em;  */
-    /* border-left: 1px solid black;
+        /* max-width: 44em;  */
+        /* border-left: 1px solid black;
     border-right: 1px solid black; */
-    color: black;
-    font-size: 14pt;
-    line-height: 140%; 
-    color: #333; 
-    font-family: Raleway;
-    background-color: #d9fbff;
+        color: black;
+        font-size: 14pt;
+        /* line-height: 140%; */
+        color: #333;
+        font-family: Raleway;
+        background-color: var(--bg);
+        overflow-wrap: break-word;
+        hyphens: auto;
 }
 
-.nav{
+.nav {
         font-family: Raleway;
         font-size: 12pt;
-        list-style:none;
-        margin:0;
-        padding:0;
-        text-align:center;
-    }
-    .nav li{
-        display:inline;
-    }
-    .nav span{
-        display:inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+}
+
+.nav li {
+        display: inline;
+}
+
+.nav span {
+        display: inline-block;
         margin-left: 16px;
         margin-right: 16px;
         margin-top: 16px;
         text-decoration: none;
         color: black;
-    }
-    .nav a{
-        text-decoration: none;
-    }
-
-.nav{
-        font-size: 12pt;
-        line-height: 100%;
 }
+
+.nav a {
+        text-decoration: none;
+}
+
 
 code {
-    font-family: monospace;
+        font-family: monospace;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a { 
-    text-decoration: none;
-    color: black; 
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+        text-decoration: none;
+        color: black;
 }
-h1, h2, h3, h4, h5 { font-family: Raleway;
-                     font-weight: bold;
-                     /* border-bottom: 1px dotted black; */
-                     color: black;
-                     
- }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+        font-family: Raleway;
+        font-weight: bold;
+        /* border-bottom: 1px dotted black; */
+        color: black;
+
+}
+
 h1 {
         font-size: 250%;
-        
+
 }
 
 h2 {
@@ -91,6 +106,7 @@ h1.title {
 dt code {
         font-weight: bold;
 }
+
 dd p {
         margin-top: 0;
 }
@@ -100,12 +116,4 @@ dd p {
         font-size: 70%;
         color: gray;
         text-align: center;
-        }
-img {
-        max-width: 50%;
-        height:auto;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-
 }

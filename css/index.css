@@ -1,31 +1,35 @@
-html, body {
-    padding:0;
-    margin:0;
+html,
+body {
+    padding: 0;
+    margin: 0;
     font-family: Raleway;
     background-color: var(--bg);
 }
 
-.nav{
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
-.nav li{
-    display:inline;
+
+.nav li {
+    display: inline;
 }
-.nav span{
-    display:inline-block;
+
+.nav span {
+    display: inline-block;
     margin-left: 16px;
     margin-right: 16px;
     margin-top: 16px;
     text-decoration: none;
     color: black;
 }
-.nav a{
+
+.nav a {
     text-decoration: none;
 }
-   
+
 .container {
     position: absolute;
     top: 50%;
@@ -45,18 +49,19 @@ html, body {
     float: left;
     width: 50%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px;
+    /* Should be removed. Only for demonstration */
 }
 
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.head-container{
+.head-container {
     display: flex;
     align-items: center;
 }
@@ -64,13 +69,14 @@ html, body {
 .head-col {
     flex: 50%;
 }
+
 .pfp {
     width: 25%;
     border-radius: 50%;
 }
 
-.width-limit{
-    max-width:100%;
+.width-limit {
+    max-width: 100%;
 }
 
 .social {

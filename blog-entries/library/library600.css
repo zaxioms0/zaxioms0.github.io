@@ -1,0 +1,16 @@
+.column {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    width: 100%;
+}
+
+.gallery {
+    width: 49%;
+}
+.thumbnail {
+    width: 100%;
+}
+.column1 {
+    padding-left: 5%;
+}
