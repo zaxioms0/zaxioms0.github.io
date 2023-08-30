@@ -44,3 +44,11 @@ html, body {
 .bottom {
     margin-bottom: 30%;
 }
+
+.posts {
+    list-style: none;
+}
+.desc {
+    width: 40%;
+    padding-left: 5%;
+}
