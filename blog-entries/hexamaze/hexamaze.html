@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+        var mathElements = document.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+                katex.render(texText.data, mathElements[i], {
+                    displayMode: mathElements[i].classList.contains('display'),
+                    throwOnError: false,
+                    macros: macros,
+                    fleqn: false
+                });
+            }
+        }
+    });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>The maximal square Hexamaze is 13 x 13</title>
+    <link rel="stylesheet" href="../../css/helpers.css" />
+    <link rel="stylesheet" href="../../css/blog-template.css" />
+    <link rel="stylesheet" href="./hexamaze.css" />
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+
+
+    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="../../css/blog-template600.css">
+    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="./hexamaze600.css">
+</head>
+<ul class="nav">
+    <li><a href="../../index.html">
+            <span class=highlightable>home</span>
+        </a>
+    </li>
+
+    <li><a href="../../about.html">
+            <span class=highlightable>about</span>
+        </a>
+    </li>
+
+    <li><a href="../../blog.html">
+            <span class=highlightable>blog</span>
+        </a>
+    </li>
+
+    <li><a href="../../research.html">
+            <span class=highlightable>research</span>
+        </a>
+    </li>
+
+    <li><a href="../../music.html">
+            <span class=highlightable>music</span>
+        </a>
+    </li>
+</ul>
+
+<body>
+    <h1 id="main"><span class="highlight">The maximal square Hexamaze is 13 x 13</span> </h1>
+    <h2 id="tldr"><span class="highlight">What is Hexamaze?</span></h2>
+    The Game <a href="">Keep Talking and Nobody Explodes</a> (KTANE) involves cooperatively solving a series of puzzles
+    in order to defuse a bomb.
+    In the game, the player with the bomb needs to relay information presented to them in the module to the other player
+    who has the manual on how to
+    defuse the bomb. Notably, the defuser cannot see the manual, and the player with the manual cannot see the bomb.
+    <br>
+    <br>
+    In hexamaze, the defuser is presented with a small hexagonal grid with a few icons on it and a colored peg. The
+    defuser then must convey the relative
+    positions of the symbols on the hexagonal grid to the player with the manual. In the manual, there is a larger
+    hexagonal grid, which contains the small
+    one that the player sees, up to rotation. It is then the goal of the manual player to align the small subgrid that
+    the defuser has to the large grid in the manual
+    and instruct the defuser how to guide the peg out of the maze.
+    <br>
+    <br>
+    In the example below, the highlighted blue section on the rightmost image is the subgrid that the defuser sees,
+    correctly overlayed on the grid
+    that the manual user sees, as conveyed by the circle, hexagon, and triangle indicators which need to line up.
+    <div id="figure">
+        <table>
+            <tr>
+                <td>
+                    <img class="figure" src="img/hexamaze_player.png" alt="Lorem ipsum" title="Lorem ipsum">
+                </td>
+                <td>
+                    <img class="figure" src="img/hexamaze_manual.png" alt="Dolor sit" title="Dolor sit">
+                </td>
+                <td>
+                    <img class="figure" src="img/hexamaze_solved.png" alt="Dolor sit" title="Dolor sit">
+                </td>
+            </tr>
+
+            <tr>
+                <td>What the defuser sees</td>
+                <td>What the manual user sees</td>
+                <td>The subgrid properly alligned to the large grid</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <h2 id="mathy"><span class="highlight">Making it Mathy</span> </h2>
+    Finding the correct orientation of the maze wasn't so hard, right? From this game arises a natural question, or at
+    least it did to my friends and I:
+    "what is the hardest you can make a hexamaze?". In order to keep things interesting, tractible, and explainable
+    without going too much more into the details of KTANE,
+    we will make some simplifying assumptions:
+    <ol>
+        <li>The board will be a square</li>
+        <li>The symbols will be arrows facing up, down, left, or right, or are blank.</li>
+        <li>The "defuser" will see a <span class="math inline">2 \times 2</span> subgrid of the board.</li>
+    </ol>
+    To formally state the problem: You are tasked with filling in a <span class="math inline">n \times n</span> board
+    with symbols, <span class="math inline">\{\uparrow, \downarrow, \rightarrow, \leftarrow, \quad\}</span>, in each
+    cell such that every <span class="math inline">2 \times 2</span> subgrid
+    is unique up to rotation. What is the largest value of <span class="math inline">n</span> for which this is
+    possible? For simplicity a "tile" will refer to a
+    <span class="math inline">2 \times 2</span> subgrid, and a "cell" will refer to a single square in the grid.
+    <h2 id="ub"><span class="highlight">A Quick Upperbound</span> </h2>
+    For the sake of example, we can demonstrate the following upperbound. The board cannot be larger than <span
+        class="math inline"> 26 \times 26</span>.
+    To see why, consider that there are <span class="math inline">5</span> (up, down, left, right, blank) symbols that
+    can be placed on the board, and
+    <span class="math inline">4</span> squares
+    that the user sees. Thus, if we ignore rotation, there are <span class="math inline">5^4</span> unique <span
+        class="math inline">2 \times 2</span> patterns.
+    On a <span class="math inline">26 \times 26</span> board, there are <span class="math inline">25 \times 25 =
+        5^4</span>, <span class="math inline">2 \times 2</span> subgrids,
+    and thus, if the board were any larger we would run out of unique <span class="math inline">2 \times 2</span> tiles
+    to place on the board.
+    <h2 id="ub_better"><span class="highlight">Doing a Bit Better</span> </h2>
+    From here, <a href="https://www.wikiwand.com/en/Burnside's_lemma">Burnside's lemma</a> was discussed as potentially
+    being useful. Burnside's lemma describes the number of orbits when a group <span class="math inline">G</span> acts
+    on a set <span class="math inline">X</span>
+    <div class=""></div>
+    <span class="math display">\vert G / X \vert = \frac{1}{\vert G\vert} \sum_{g \in G} \vert \{x \in X \mid g \cdot x
+        = x\} \vert</span>
+    <br>
+    To utilize this, we let <span class="math inline">X</span> be the set of configurations of a <span
+        class="math inline">2 \times 2</span> tile, and
+    <span class="math inline">G = \{e, \circlearrowright, \circlearrowright^2, \circlearrowright^3\}</span> be the
+    cyclic group of order <span class="math inline">4</span> where
+    the action in question is rotation clockwise by <span class="math inline">90^\circ</span> .
+    For example, we have:
+    <span class="math display"> \circlearrowright^3 \cdot \begin{bmatrix} \uparrow & \downarrow \\ \rightarrow &
+        \leftarrow\end{bmatrix} =
+        \begin{bmatrix} \rightarrow & \downarrow \\ \leftarrow & \uparrow \end{bmatrix}
+    </span>
+    Applying the theorem, we count the rotations under fix point:
+    <ol>
+        <li>Under no rotation, everything is fixed, so this adds <span class="math inline">5^4</span> to our sum</li>
+        <li>Under clockwise rotation by <span class="math inline">90^\circ</span>, the only fixed points are the square
+            of
+            all blanks and the rotations of the square <span class="math inline">\begin{bmatrix} \uparrow & \rightarrow
+                \\ \leftarrow & \downarrow \end{bmatrix}</span>
+            which all together will add <span class="math inline">1 + 4 = 5</span> to the sum.
+        </li>
+        <li>Under a <span class="math inline">180^\circ</span> rotation, we see that we can fix two tiles, and then the
+            other two will automatically be fixed.
+            This results in an additional <span class="math inline">5^2 = 25</span> to the sum.
+        </li>
+        <li>
+            For <span class="math inline">270^\circ</span>, the same reasoning as <span
+                class="math inline">90^\circ</span> applies leaving us with another <span class="math inline">5</span>.
+        </li>
+    </ol>
+    This means, all together, there are <span class="math inline">\frac{1}{4}\left(5^4 + 5 + 5^2 + 5\right) = 165</span>
+    orbits, or,
+    <span class="math inline">165</span> tiles up to rotation!
+    <br>
+    <br>
+    This means that we cannot have a <span class="math inline">14 \times 14</span> board or larger, as this will have
+    <span class="math inline">169</span>,
+    <span class="math inline">2 \times 2</span> tiles which will require us to use a duplicate. This is a massive
+    improvement on our <span class="math inline">26 \times 26</span>
+    bound from before!
+    <h2 id="SAT"><span class="highlight">Constructing the Best Board</span></h2>
+    I must confess, the story I've told so far all took place before I was brought onto the problem. This all happened
+    over the course of a math club
+    dinner which I didn't attend. However, during that dinner, despite quickly finding the upperbound via the methods I
+    described above, they unsurprisingly found
+    constructing boards with no duplicate tiles turns out to be very difficult by hand. As such, whether <span
+        class="math inline">14</span> was a tight bound remained a mystery.
+    Hearing about the discussion of this problem in a Discord call later that night, I thought I could help with my
+    favorite tool: SAT Solvers.
+    <br>
+    <br>
+    This blog assumes knowledge of what SAT and SAT solvers are. A quick summary can be found on <a
+        href="https://en.wikipedia.org/wiki/SAT_solver">Wikipedia</a>.
+
+    While this problem seems quite complicated to encode, it is actually not too difficult. After a bit of thinking, I
+    encoded the problem with the following procedure:
+    <ol>
+        <li>Each square has <span class="math inline">5</span> variables, one for each symbol</li>
+        <li>Every <span class="math inline">2 \times 2</span> combination tile of variables implies exactly one of <span
+                class="math inline">165</span> "equivalence class" variables associted with the tile</li>
+        <li>There must be at most one of each class of equivalence class variables set accross all of the tiles.</li>
+    </ol>
+    I should add, by this point it was around 4am and I had just come home from a night in New York City, so I was
+    exhausted. I wasn't really considering how to optimally encode
+    the problem - I just wanted to see what would happen if I tried a naive strategy - I could improve it tomorrow
+    morning. With my encoding scheme, for a <span class="math inline">13 \times
+        13</span> board, this encoding results in <span class="math inline">(13^2 * 5) + (12^2 * 165) = 24605</span>
+    problem variables.
+    At first, when I saw this I was a bit disheartened - I was too tired to implement any clever encoding of the
+    cardinality constraints, and knowing the naive encoding I cooked up
+    would be roughly <span class="math inline">O(n^2)</span> clauses, I felt I should probably go to bed and come back
+    to the problem in the morning. But, something in me pushed me to try it
+    anyway. And to my surprise, despite the tragically large number of clauses, <span class="math inline">1795739</span>
+    to be exact, cadical spit out an answer almost immediately!
+    <br>
+    <br>
+    It turned out a <span class="math inline">13 \times 13</span> board was possible! I quickly wrote a script to decode
+    the output from cadical, and my sleep deprived brain couldn't believe its eyes.
+    I proudly present: <b>the hardest possible square hexamaze!</b>
+    <div class="result">
+        <img class="result_img" src="img/13.png">
+    </div>
+</body>
+
+</html>
