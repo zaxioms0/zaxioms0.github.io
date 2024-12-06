@@ -137,7 +137,7 @@
     being useful. Burnside's lemma describes the number of orbits when a group <span class="math inline">G</span> acts
     on a set <span class="math inline">X</span>
     <div class=""></div>
-    <span class="math display">\vert G / X \vert = \frac{1}{\vert G\vert} \sum_{g \in G} \vert \{x \in X \mid g \cdot x
+    <span class="math display">\vert X / G \vert = \frac{1}{\vert G\vert} \sum_{g \in G} \vert \{x \in X \mid g \cdot x
         = x\} \vert</span>
     <br>
     To utilize this, we let <span class="math inline">X</span> be the set of configurations of a <span
@@ -184,7 +184,8 @@
     dinner which I didn't attend. However, during that dinner, despite quickly finding the upperbound via the methods I
     described above, they unsurprisingly found
     constructing boards with no duplicate tiles turns out to be very difficult by hand. As such, whether <span
-        class="math inline">14</span> was a tight bound remained a mystery.
+        class="math inline">14</span> was a tight bound remained a mystery, was it even possible to build a 
+        <span class="math inline">13 \times 13</span> board under the constraints?
     Hearing about the discussion of this problem in a Discord call later that night, I thought I could help with my
     favorite tool: SAT Solvers.
     <br>
