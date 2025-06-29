@@ -1,0 +1,33 @@
+#tl, figcaption {
+    max-width: 30%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.figure {
+    display: inline-block;
+    width: 80%;
+}
+
+#figure {
+    text-align: center;
+}
+
+.result {
+    text-align: center;
+}
+
+.challenge {
+    text-align: center;
+    /* rotate: 270deg; */
+    height: auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

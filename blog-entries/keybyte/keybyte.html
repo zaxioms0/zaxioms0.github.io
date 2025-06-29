@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+<script>document.addEventListener("DOMContentLoaded", function () {
+        var mathElements = document.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+            var texText = mathElements[i].firstChild;
+            if (mathElements[i].tagName == "SPAN") {
+                katex.render(texText.data, mathElements[i], {
+                    displayMode: mathElements[i].classList.contains('display'),
+                    throwOnError: false,
+                    macros: macros,
+                    fleqn: false
+                });
+            }
+        }
+    });
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>The maximal square Hexamaze is 13 x 13</title>
+    <link rel="stylesheet" href="../../css/helpers.css" />
+    <link rel="stylesheet" href="../../css/blog-template.css" />
+    <link rel="stylesheet" href="./hexamaze.css" />
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+
+
+    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="../../css/blog-template600.css">
+    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="./hexamaze600.css">
+</head>
+<ul class="nav">
+    <li><a href="../../index.html">
+            <span class=highlightable>home</span>
+        </a>
+    </li>
+
+    <li><a href="../../about.html">
+            <span class=highlightable>about</span>
+        </a>
+    </li>
+
+    <li><a href="../../blog.html">
+            <span class=highlightable>blog</span>
+        </a>
+    </li>
+
+    <li><a href="../../research.html">
+            <span class=highlightable>research</span>
+        </a>
+    </li>
+
+    <li><a href="../../music.html">
+            <span class=highlightable>music</span>
+        </a>
+    </li>
+</ul>
+
+<body>
+
+    <h1 id="main"><span class="highlight">A First Foray Into DIY Keyboards</span> </h1>
+    <h2 id="main"><span class="highlight">Why Make a Keyboard</span> </h2>
+    I recently graduated from CMU's School of Computer Science, and while I was walking the stage accepting my diploma
+    it occured to me, "I don't know how a computer works." Don't get me wrong, CMU's CS curriculum is top notch, 
+    but, largely because of my own choices in classes (which I wouldn't change), I have a degree in theoretical math boxes.
+    Don't get me wrong, I am perfectly comfortable with low level programming, but once we get below an OS, I have
+    very little idea how electronics work. So, I decided to take the summer to learn about more about this. 
+    
+    Simultaneously, I attended Keycon 2025, the premier Keyboard convention. 
+    There, <a href="https://www.youtube.com/@joe_scotto">Joe Scotto</a> gave a talk on the process of hand-wiring 
+    keyboards and I was immediately hooked. I've had a vague interest in mechanical keyboards for a while and I saw
+    and opportunity to learn a bit more about electronics by building my own, completely from scratch. However,
+    I have never soldered before, never done embedded programming, and have very little 3D modeling experience. What
+    could possibly go wrong?
+    
+    <h2 id="idea"><span class="highlight">The Idea</span></h2>
+    It seems like a classic first project is a 3x3 macropad, but honestly, that seems a bit boring to me. I don't think
+    I would ever use it, and, if I'm going to do a project I have no use for, I'd like it to be at least entertaining.
+    Enter the Keybyte, a keyboard where you type one byte at a time. More specifically, my idea was to have a keyboard
+    with 9 keys in a row. The first 8 correspond to the bits of the byte you want to type, and the last is an "enter" 
+    key which confirms the byte you are pressing. For example, to type an "A", which is 65 in ascii, you would need to
+    type the second and eight key (corresponding to the least significant and second most significant bits) and then
+    press "enter."
+    It's kind of like if the <a href="https://en.wikipedia.org/wiki/Stenotype">Stenotype Machine</a> was comically
+    inefficient.
+
+    <h2 id="3d"><span class="highlight">The 3d Model</span></h2>
+    Of course, any good keyboard needs a case. Unfortunately, they don't sell cases for keyboards this brilliant, 
+    so I would have to design it myself.
+    I hadn't done any 3D modeling since highschool, but it was shockingly easy to get back into. I used onshape as
+    my modeling software and had a decent prototype modeled and printed in only a couple of hours. Honestly, the hardest
+    part was finding the dimensions of the MX switches I was going to use.
+
+    <h2 id="mcu"><span class="highlight">The Microchip</span></h2>
+    The first thing I had to learn about for this project was microchips. 
+    I debated going with an arduino or raspberry pi, but I didn't like the fact that they used microUSB instead of USB C.
+    I know I could solder on a USB C breakout board, but that seemed like a lot of work. After doing some research, I
+    settled on the Sparkfun Pro Micro with an Atmega32U4 processor. In retrospect, I should've gone with a board with 
+    and RP2040 so I could use the <a href="https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html">Raspberry Pi Pico SDK</a>, 
+    but I'll keep that in mind for the future. Having picked out a microchip, I had to face my biggest concern
+    for this project. Soldering.
+
+    <h2 id="solder"><span class="highlight">Learning to Solder</span></h2>
+    A common theme I saw reading blog posts and watching videos about DIY is "how easy it is to solder." In my
+    experience, that could not have been further from the truth. I had about a million "bugs" due to poor connections,
+    especially between the pins of the switches and my copper wire. But, after spending several hours soldering and
+    re-soldering, I was able to get it to work! It should be noted that like any skill, you improve over time and I 
+    definitely noticed my solder joints had improved by the end of the day.
+
+    <h2 id="software"><span class="highlight">Writing the Software</span></h2>
+    Finally something I'm good at! To be honest, I really wanted to write the software for this project in C,
+    but given the Atmega32U4, I decided to just use Arduino and be a bit sad about it. Truthfully, either way the code
+    is super simple, it's not like I was going to write the USB stack from scratch... for now. The only difference is 
+    whether I would be using Arduino's Keyboard library or <a href="https://github.com/hathach/tinyusb">TinyUSB.</a>
+    Writing the software was super simple, at least, given my experience programming for the past decade. The 
+    entire thing is basically just:
+    <pre><code>
+    if (pressed(PIN_ENTER)) {
+        char byte = 0;
+        for i in PINS.length {
+            if (pressed(PINS[i])) {
+                byte |= 1 << i;
+            }
+        }
+        Keyboard.write(byte);
+    }
+    </code></pre>
+
+    <h2 id="done"><span class="highlight">Results</span></h2>
+    And that's it! With a WPM of approximately 0, here is the keybyte:
+    <br>
+    <center>
+    <img src="img/kb.jpeg" width="50%"/>
+    </center>
+   </body>
+
+</html>
