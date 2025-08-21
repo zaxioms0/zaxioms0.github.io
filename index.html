@@ -1,91 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>hiya!</title>
-
-    <link rel="stylesheet" media="screen and (min-width: 1000px)" href="css/index.css">
-    <link rel="stylesheet" media="screen and (max-width: 1000px)" href="css/index600.css">
-
-    <link rel="stylesheet" href="css/helpers.css">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.ico"/>
+  <link rel="stylesheet" href="css/helpers.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <title>Welcome!</title>
 
 </head>
 <body>
-<ul class="nav">
-    <li><a href="index.html">
-        <span class=highlightable>home</span>
-        </a>
-    </li>
+  <section class="header">
+    <div class="header-text">
+      <h1>Zach Battleman</h1>
+      <p>CMU Computer Science</p>
+      <p><em>he/they</em></p>
+      <p>zbattlem [at] cs [dot] cmu [dot] edu</p>
 
-    <li><a href="about.html">
-        <span class=highlightable>about</span>
-        </a>
-    </li>
+      <div class="social-links">
+        <a target="_blank" href="https://github.com/zaxioms0"><img src="assets/img/github.png" alt="GitHub"></a>
+        <a target="_blank" href="https://mathstodon.xyz/@zaxioms"><img src="assets/img/mastodon.png"></a>
+      </div>
 
-    <li><a href="blog.html">
-        <span class=highlightable>blog</span>
-        </a>
-    </li>
-
-    <li><a href="research.html">
-        <span class=highlightable>research</span>
-        </a>
-    </li>
-    <li><a href="music.html">
-        <span class=highlightable>music</span>
-        </a>
-    </li>
-</ul>
-<div class="container">
-    <div class="row">
-        <div class="column">
-            <div class="head-container">
-                <div class="head-col">
-                    <h1><span class="highlight">Welcome!</span></h1>
-                    <h2>I'm Zach!</h2>
-                    <p>"A CS major who likes being a CS major" - Jane</p>
-                </div>
-
-                <img class="head-col pfp" src="./assets/img/pfp.png">
-            </div>
-            <hr>
-            <p class ="width-limit">I'm a CS student at Carnegie Mellon who likes computers and math
-            just a taaaaaad too much :D</p>
-            <hr>
-            <div class="social">
-                <a href="https://twitter.com/zaxioms"  target="_blank">
-                <img class="social-img" src="./assets/img/twitter.png">
-                </a>
-
-                <a href="https://types.pl/@zaxioms"  target="_blank">
-                <img class="social-img" src="./assets/img/mastodon.png">
-                </a>
-
-                <a href="https://github.com/aricursion" target="_blank">
-                <img class="social-img" src="./assets/img/github.png">
-                </a>
-                
-                <a href="https://open.spotify.com/user/zanolon" target="_blank">
-                <img class="social-img" src="./assets/img/spotify.png">
-                </a>
-                <a href="https://www.linkedin.com/in/zach-battleman-a29920158/" target="_blank">
-                    <img class="social-img" src="./assets/img/linkedin.png">
-                    </a>
-            </div>
-        </div>
-        <div class="column column2">
-            <h1><span class="highlight"> About me! </span></h1>
-            <p class="small-about">Welcome to my website! I'm a Computer
-            Science student at Carnegie Mellon's SCS ('25). While I've been coding
-            since I was 10, I'm pretty new to the whole formalization and theory
-            thing, so I'm still trying to figure out what I like. That said,
-            functional programming and type theory seems pretty cool, so yeah,
-            let's go with that. Thanks for checking out my website! Feel free to
-            take a look around with the links up top and who knows, maybe you'll
-            stumble across some hidden pages ooOOoo</p>
-        </div>
+      <div class="nav-links">
+        <a href="blog.html">Blog</a>
+        <a href="research.html">Research</a>
+        <a href="#">Teaching</a>
+      </div>
     </div>
-</div>
+
+    <div class="header-img">
+      <img src="assets/img/pfp.png" alt="Profile photo" />
+      <!-- <p class="quote">“You would call it a coclique"</p> -->
+    </div>
+  </section>
+  <section class="about">
+  <h2>About</h2>
+  <p>
+    My name is Zach, and I study Computer Science at Carnegie Mellon University advised by Marijn Heule.
+  </p>
+
+  <p>
+    My research interests are in automated reasoning and formal methods broadly, with a particular
+    interest in <a target="_blank" href="https://en.wikipedia.org/wiki/SAT_solver">SAT solvers</a>.
+    To date, my research has largely focussed on massively parallel SAT solving that is most useful for resolving
+    deep, intricate combinatorial problems. 
+    More generally, I am interested in making formal methods, verification, and automated reasoning
+    more usable and powerful for mathematicians, programmers, and hobbyists.  
+  </p>
+</section>
+
 </body>
 </html>

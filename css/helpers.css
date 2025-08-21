@@ -1,23 +1,21 @@
 :root {
-  --accent: #b995ed;
-  --bg: #d9fbff;
+    --img-drop-shadow: #a6f1a6;
+    --text-drop-shadow: #D8CCEB;
+    --header-color: #e0ffff;
+    --text-color: #0a2a32;
 }
 
-@font-face {
-  font-family: Raleway;
-  src: url(../font/raleway/Raleway-VariableFont_wght.ttf);
-}
 
 .highlight {
     background: linear-gradient(180deg,rgba(255,255,255,0) 
             55%, 
-            var(--accent) 50%);
+            var(--text-drop-shadow) 50%);
 }
 
 .highlightable:hover {
     background: linear-gradient(180deg,rgba(255,255,255,0) 
     65%, 
-    var(--accent) 50%);
+    var(--text-drop-shadow) 50%);
 }
 
 

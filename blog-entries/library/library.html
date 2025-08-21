@@ -7,39 +7,18 @@
     <link rel="stylesheet" href="../../css/helpers.css" />
     <link rel="stylesheet" href="../../css/blog-template.css" />
     <link rel="stylesheet" href="./library.css" />
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
 
-
-    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="../../css/blog-template600.css">
-    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="./library600.css">
+    <link rel="stylesheet" href="../../snippets/nav.css" />
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
 </head>
-<ul class="nav">
-    <li><a href="../../index.html">
-            <span class=highlightable>home</span>
-        </a>
-    </li>
-
-    <li><a href="../../about.html">
-            <span class=highlightable>about</span>
-        </a>
-    </li>
-
-    <li><a href="../../blog.html">
-            <span class=highlightable>blog</span>
-        </a>
-    </li>
-
-    <li><a href="../../research.html">
-            <span class=highlightable>research</span>
-        </a>
-    </li>
-
-    <li><a href="../../music.html">
-            <span class=highlightable>music</span>
-        </a>
-    </li>
-</ul>
-
+<div id="nav-placeholder"></div>
+<script>
+  fetch("../../snippets/nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
 <body>
     <h1 id="main"><span class="highlight">The Great Carnegie Library of Pittsburgh Adventure</span> </h1>
     I've lived in Pittsburgh for about 2 years at the time of writing, and like any self-respecting

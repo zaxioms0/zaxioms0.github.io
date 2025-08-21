@@ -31,3 +31,16 @@
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+@media (max-width: 768px) {
+h1 {
+    font-size: 150%;
+}
+
+.result img {
+    text-align: center;
+    width: 80vw;
+    height: auto;
+    display: inline-block;
+}
+}

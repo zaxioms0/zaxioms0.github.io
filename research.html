@@ -4,40 +4,21 @@
 <head>
     <title>Research</title>
     <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" media="screen and (max-width: 850px) " href="./css/blog600.css">
 
     <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="snippets/nav.css">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
+<div id="nav-placeholder"></div>
+<script>
+  fetch("snippets/nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
 <body>
-    <ul class="nav">
-        <li><a href="index.html">
-                <span class=highlightable>home</span>
-            </a>
-        </li>
-
-        <li><a href="about.html">
-                <span class=highlightable>about</span>
-            </a>
-        </li>
-
-        <li><a href="blog.html">
-                <span class=highlightable>blog</span>
-            </a>
-        </li>
-        <li><a href="research.html">
-                <span class=highlightable>research</span>
-            </a>
-        </li>
-
-        <li><a href="music.html">
-                <span class=highlightable>music</span>
-            </a>
-        </li>
-    </ul>
-
     <div class=container>
         <h1><span class="highlight">Academic Research</span> </h1>
         <ul class="posts">

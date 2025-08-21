@@ -24,42 +24,19 @@
     <title>The maximal square Hexamaze is 13 x 13</title>
     <link rel="stylesheet" href="../../css/helpers.css" />
     <link rel="stylesheet" href="../../css/blog-template.css" />
-    <link rel="stylesheet" href="./hexamaze.css" />
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
-
-
-    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="../../css/blog-template600.css">
-    <link rel="stylesheet" media="screen and (max-width: 1000px) " href="./hexamaze600.css">
+    <link rel="stylesheet" href="keybyte.css" />
+    <link rel="stylesheet" href= "../../snippets/nav.css"/>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
 </head>
-<ul class="nav">
-    <li><a href="../../index.html">
-            <span class=highlightable>home</span>
-        </a>
-    </li>
-
-    <li><a href="../../about.html">
-            <span class=highlightable>about</span>
-        </a>
-    </li>
-
-    <li><a href="../../blog.html">
-            <span class=highlightable>blog</span>
-        </a>
-    </li>
-
-    <li><a href="../../research.html">
-            <span class=highlightable>research</span>
-        </a>
-    </li>
-
-    <li><a href="../../music.html">
-            <span class=highlightable>music</span>
-        </a>
-    </li>
-</ul>
-
+<div id="nav-placeholder"></div>
+<script>
+  fetch("../../snippets/nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
 <body>
-
     <h1 id="main"><span class="highlight">A First Foray Into DIY Keyboards</span> </h1>
     <h2 id="main"><span class="highlight">Why Make a Keyboard</span> </h2>
     I recently graduated from CMU's School of Computer Science, and while I was walking the stage accepting my diploma

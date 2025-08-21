@@ -1,104 +1,154 @@
-html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: Raleway;
-    background-color: var(--bg);
+  margin: 0;
+  font-family: Raleway, sans-serif;
+  color: var(--text-color);
 }
 
-.nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.header {
+  background-color: var(--header-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  gap: 3rem;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+.header-text {
+  max-width: 500px;
+}
+
+.header-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  z-index: 1
+}
+
+.header-text h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 0.4em;
+  background: var(--text-drop-shadow); /* accent bar */
+  z-index: -1;
+}
+
+.header-text p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.social-links {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem; /* spacing between icons */
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.nav-links a {
+  font-weight: bold;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  background: var(--text-drop-shadow);
+  padding: 0 0.2em;
+}
+
+.header-img {
+  text-align: center;
+}
+
+.header-img img {
+  max-width: 250px;
+  height: auto;
+  border: 8px solid var(--img-drop-shadow);
+  border-radius: 4px;
+}
+
+.quote {
+  margin-top: 0.8rem;
+  font-style: italic;
+}
+
+.about {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right:auto;
+  line-height: 1.7;
+
+  color: var(--text-color);
+}
+
+.about p {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.about h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.about h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 24%;
+  width: 100%;
+  height: 0.4em;
+  background: var(--text-drop-shadow); /* peach underline */
+  z-index: -1;
+}
+
+.highlight {
+  background: var(--text-drop-shadow); /* soft yellow */
+  font-weight: bold;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
     text-align: center;
-}
+  }
 
-.nav li {
-    display: inline;
-}
+  .header-text h1 {
+    font-size: 2rem;
+  }
 
-.nav span {
-    display: inline-block;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 16px;
-    text-decoration: none;
-    color: black;
-}
-
-.nav a {
-    text-decoration: none;
-}
-
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-80%);
-    -webkit-transform: translateX(-50%) translateY(-80%);
-    transform: translateX(-50%) translateY(-80%);
-    width: 75%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px;
-    /* Should be removed. Only for demonstration */
-}
-
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.head-container {
+  .header-img img {
+    max-width: 200px;
+  }
+  /* Center nav links on mobile */
+  .nav-links {
     display: flex;
-    align-items: center;
-}
-
-.head-col {
-    flex: 50%;
-}
-
-.pfp {
-    width: 25%;
-    border-radius: 50%;
-}
-
-.width-limit {
-    max-width: 100%;
-}
-
-.social {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    gap: 8px;
-}
+    gap: 1rem; /* spacing between links */
+    margin-top: 1rem;
+  }
 
-.social-img {
-    width: 72px;
-    height: 72px;
-    clip-path: url(#squircle);
-    transition: transform .25s
-}
-
-.social-img:hover {
-    transform: scale(1.1)
-}
-
-.small-about {
-    font-size: 18px;
+  .nav-links a {
+    margin: 0; /* remove inline spacing */
+  }
 }

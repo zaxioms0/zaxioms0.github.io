@@ -1,0 +1,26 @@
+.nav {
+        font-family: Raleway;
+        font-size: 12pt;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+}
+
+.nav li {
+        display: inline;
+}
+
+.nav span {
+        display: inline-block;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 16px;
+        text-decoration: none;
+}
+
+.nav a {
+        text-decoration: none;
+}
+
+
