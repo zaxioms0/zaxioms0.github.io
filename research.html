@@ -6,22 +6,30 @@
     <link rel="stylesheet" href="css/blog.css">
 
     <link rel="stylesheet" href="css/helpers.css">
-    <link rel="stylesheet" href="snippets/nav.css">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/snippets/nav.js"></script>
 </head>
-<div id="nav-placeholder"></div>
-<script>
-  fetch("snippets/nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    });
-</script>
 <body>
     <div class=container>
         <h1><span class="highlight">Academic Research</span> </h1>
         <ul class="posts">
+            <li>
+                <h2>
+                    <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SAT.2025.3">
+                        <span class="highlight">Problem Partitioning via Proof Prefixes</span></a>
+                </h2>
+                <p>
+                Accepted to SAT '25
+                </p>
+
+                <div class="desc">
+                    <p>
+                    Satisfiability solvers have been instrumental in tackling hard problems, including mathematical challenges that require years of computation. A key obstacle in efficiently solving such problems lies in effectively partitioning them into many, frequently millions of subproblems. Existing automated partitioning techniques, primarily based on lookahead methods, perform well on some instances but fail to generate effective partitions for many others.
+                    This paper introduces a powerful partitioning approach that leverages prefixes of proofs derived from conflict-driven clause-learning solvers. This method enables non-experts to harness the power of massively parallel SAT solving for their problems. We also propose a semantically-driven partitioning technique tailored for problems with large cardinality constraints, which frequently arise in optimization tasks. We evaluate our methods on diverse benchmarks, including combinatorial problems and formulas from SAT and MaxSAT competitions. Our results demonstrate that these techniques outperform existing partitioning strategies in many cases, offering improved scalability and efficiency.
+                    </p>
+                </div>
+            </li>
             <li>
                 <h2>
                     <a href="https://github.com/aricursion/CompileBPV/blob/main/report.pdf">
@@ -40,19 +48,6 @@
                     </p>
                 </div>
             </li>
-            <!-- <li>
-                <h2>
-                    <a href="blog-entries/acronymy/acronymy.html">
-                        <span class="highlight">Minimizing Pentagons in the Plane</span></a>
-                </h2>
-                <div class="desc">
-                    Date Written: 6/4/2023
-                    <p>
-                        A post outlining some analysis I did of David Renshaw's website <a
-                            href="http://acronymy.net/">Acronymy</a>
-                    </p>
-                </div>
-            </li> -->
             <li>
                 <h2>
                     <span class="highlight">More in the works...</span>

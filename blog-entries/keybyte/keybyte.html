@@ -17,7 +17,6 @@
     });
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
@@ -25,17 +24,9 @@
     <link rel="stylesheet" href="../../css/helpers.css" />
     <link rel="stylesheet" href="../../css/blog-template.css" />
     <link rel="stylesheet" href="keybyte.css" />
-    <link rel="stylesheet" href= "../../snippets/nav.css"/>
+    <script src="/snippets/nav.js"></script>
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
 </head>
-<div id="nav-placeholder"></div>
-<script>
-  fetch("../../snippets/nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    });
-</script>
 <body>
     <h1 id="main"><span class="highlight">A First Foray Into DIY Keyboards</span> </h1>
     <h2 id="main"><span class="highlight">Why Make a Keyboard</span> </h2>

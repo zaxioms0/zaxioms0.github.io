@@ -8,7 +8,7 @@
 
 .highlight {
     background: linear-gradient(180deg,rgba(255,255,255,0) 
-            55%, 
+            60%, 
             var(--text-drop-shadow) 50%);
 }
 

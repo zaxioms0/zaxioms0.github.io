@@ -7,18 +7,9 @@
     <link rel="stylesheet" href="../../css/helpers.css" />
     <link rel="stylesheet" href="../../css/blog-template.css" />
     <link rel="stylesheet" href="./library.css" />
-
-    <link rel="stylesheet" href="../../snippets/nav.css" />
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+    <script src="/snippets/nav.js"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 </head>
-<div id="nav-placeholder"></div>
-<script>
-  fetch("../../snippets/nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    });
-</script>
 <body>
     <h1 id="main"><span class="highlight">The Great Carnegie Library of Pittsburgh Adventure</span> </h1>
     I've lived in Pittsburgh for about 2 years at the time of writing, and like any self-respecting
