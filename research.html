@@ -25,8 +25,10 @@
 
                 <div class="desc">
                     <p>
-                    Satisfiability solvers have been instrumental in tackling hard problems, including mathematical challenges that require years of computation. A key obstacle in efficiently solving such problems lies in effectively partitioning them into many, frequently millions of subproblems. Existing automated partitioning techniques, primarily based on lookahead methods, perform well on some instances but fail to generate effective partitions for many others.
-                    This paper introduces a powerful partitioning approach that leverages prefixes of proofs derived from conflict-driven clause-learning solvers. This method enables non-experts to harness the power of massively parallel SAT solving for their problems. We also propose a semantically-driven partitioning technique tailored for problems with large cardinality constraints, which frequently arise in optimization tasks. We evaluate our methods on diverse benchmarks, including combinatorial problems and formulas from SAT and MaxSAT competitions. Our results demonstrate that these techniques outperform existing partitioning strategies in many cases, offering improved scalability and efficiency.
+                    In this project, I used partial runs of CDCL SAT solvers and the <span class="highlight"><em>proof prefixes</em></span>
+                    which they generate in order to better select variables for use in the <span class="highlight"><em>Cube and Conquer</em></span>  
+                    SAT solving paradigm. Our results outperform the existing state of the art tool, March, especially
+                    on difficult combinatorial problems.
                     </p>
                 </div>
             </li>
@@ -50,7 +52,7 @@
             </li>
             <li>
                 <h2>
-                    <span class="highlight">More in the works...</span>
+                    <span class="highlight">Always more in the works...</span>
                 </h2>
             </li>
         </ul>
