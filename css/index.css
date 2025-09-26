@@ -74,7 +74,7 @@ body {
 }
 
 .header-img img {
-  max-width: 250px;
+  max-width: 256px;
   height: auto;
   border: 8px solid var(--img-drop-shadow);
   border-radius: 4px;
